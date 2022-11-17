@@ -2,14 +2,21 @@ import LoginPage from  '../pageobjects/login.page';
 import SecurePage from '../pageobjects/secure.page';
 
 describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
+    beforeAll('Main page', async () =>{
         await LoginPage.open();
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
-    });
-});
-
-
+    })
+    it('First input fill', async () =>{
+        await LoginPage.login()
+        await LoginPage.inputUsername.setValue('standard_user')
+        await expect(LoginPage.inputUsername).toHaveValue('standard_user')
+    })
+    it('Second input fill', async () =>{
+        await LoginPage.inputPassword.waitForDisplayed()
+        await LoginPage.inputPassword.setValue('secret_sauce')
+        await expect(LoginPage.inputPassword).toHaveValue('secret_sauce')
+    })
+    it('Button login', async ()=>{
+        await LoginPage.btnSubmit.waitForDisplayed()
+        await LoginPage.btnSubmit.click()
+    })
+})
