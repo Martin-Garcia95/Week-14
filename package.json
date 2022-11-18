@@ -21,5 +21,8 @@
     },
     "scripts": {
         "wdio": "wdio run wdio.conf.js"
+    },
+    "dependencies": {
+        "eslint": "^8.27.0"
     }
 }

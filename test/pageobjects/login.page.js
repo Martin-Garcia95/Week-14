@@ -20,6 +20,17 @@ class LoginPage extends Page {
     get btnSubmit () {
         return $('#login-button');
     }
+    get errorMessage (){
+        return $('#login_button_container > div > form > div.error-message-container.error > h3');
+    }
+
+    get burgerMenu () {
+        return $('#react-burger-menu-btn')
+    }
+
+    get logoutButton () {
+        return $('#logout_sidebar_link')
+    }
 
     /**
      * a method to encapsule automation code to interact with the page
