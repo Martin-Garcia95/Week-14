@@ -15,6 +15,7 @@ describe('My Login application', () => {
         await FilterPage.filterBttn.click();
         await expect (FilterPage.filterZA).toBeDisplayed();
         await FilterPage.filterZA.click();
+        await expect(FilterPage.filterZA).toHaveText('Name (Z to A)');
         await expect (PurchasePage.redShirt).toBeDisplayed();
     })
 
@@ -24,6 +25,7 @@ describe('My Login application', () => {
         await FilterPage.filterBttn.click();
         await expect (FilterPage.filterAZ).toBeDisplayed();
         await FilterPage.filterAZ.click();
+        await expect(FilterPage.filterAZ).toHaveText('Name (A to Z)');
         await expect (PurchasePage.backPack).toBeDisplayed();
     })
 
@@ -33,6 +35,7 @@ describe('My Login application', () => {
         await FilterPage.filterBttn.click();
         await expect (FilterPage.filterPriceLow).toBeDisplayed();
         await FilterPage.filterPriceLow.click();
+        await expect(FilterPage.filterPriceLow).toHaveText('Price (low to high)');
         await expect (PurchasePage.redSweater).toBeDisplayed();
     })
 
@@ -42,6 +45,7 @@ describe('My Login application', () => {
         await FilterPage.filterBttn.click();
         await expect (FilterPage.filterPriceHigh).toBeDisplayed();
         await FilterPage.filterPriceHigh.click();
+        await expect(FilterPage.filterPriceHigh).toHaveText('Price (high to low)');
         await expect (PurchasePage.blackSweater).toBeDisplayed();
     })
 })
